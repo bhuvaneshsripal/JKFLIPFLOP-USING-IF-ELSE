@@ -36,13 +36,44 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 
 /* write all the steps invloved */
 
+
+1.Create a new project in Quartus and write the JK flip-flop Verilog code.
+
+2.Set the top-level entity and compile the design successfully.
+
+3.Assign input pins for J, K, Clock and output pins for Q, Q̅.
+
+4.Apply clock pulses and change J, K values using simulation or hardware inputs.
+
+5.Observe and verify that the outputs follow the JK flip-flop truth table.
+
+
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+```
+module lms4(j,k,clk,q,qbar);
+input j,k,clk;
+output reg q,qbar;
+initial 
+begin
+q=1'b0;
+q=1'b1;
+end 
+
+always @(posedge clk)
+begin 
+q<=(j&~q)|(~k&q);
+qbar<=~q;
+end
+endmodule 
+```
+ Developed by:Bhuvanesh.S RegisterNumber:25015685
 
 **RTL LOGIC FOR FLIPFLOPS**
+<img width="1920" height="1080" alt="Screenshot (41)" src="https://github.com/user-attachments/assets/69d7616d-fbb5-4e3b-8326-e6b32ee961c9" />
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
+<img width="1920" height="1080" alt="Screenshot (42)" src="https://github.com/user-attachments/assets/f15a5bed-71f5-4117-830d-da409b3ccdf3" />
 
 **RESULTS**
+Thus,To implement  JK flipflop using verilog and validating their functionality using their functional tables
